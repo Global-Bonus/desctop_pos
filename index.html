@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trift</title>
+</head>
+<body>
+
+
+<script src="thrift/thrift.js"></script>
+<script src="thrift/gen-js/AuthService.js"></script>
+<script src="thrift/gen-js/ClientFinancialService.js"></script>
+<script src="thrift/gen-js/ClientInformationalService.js"></script>
+<script src="thrift/gen-js/ClientProfileService.js"></script>
+<script src="thrift/gen-js/MerchantAdminService.js"></script>
+<script src="thrift/gen-js/MerchantBookService.js"></script>
+<script src="thrift/gen-js/MerchantPointService.js"></script>
+<script src="thrift/gen-js/ProcessingService.js"></script>
+<script src="thrift/gen-js/ReportService.js"></script>
+<script src="thrift/gen-js/TagService.js"></script>
+<script src="thrift/gen-js/Vbg-api_types.js"></script>
+<script src="thrift/gen-js/VGBService.js"></script>
+<script src="thrift/gen-js/WishService.js"></script>
+
+
+<script>
+
+        var transport = new Thrift.Transport( "http://vgb-main-server.cloudapp.net:8080/vgb/thrift/auth-json" );
+        var protocol = new Thrift.Protocol( transport );
+        var client = new AuthServiceClient( protocol );
+
+        var data = client.authenticate("flor_master@mail.ru", "FlorMaster123");
+        console.log(data);
+
+</script>
+
+</body>
+</html>
